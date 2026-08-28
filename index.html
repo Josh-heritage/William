@@ -8,20 +8,22 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased relative">
 
-    <!-- Scroll Progress Rowing Tracker (Updated Icon & Static) -->
-    <div id="rower-tracker-container" class="fixed top-0 left-0 w-full h-14 bg-slate-950/90 border-b border-slate-800 backdrop-blur z-50 overflow-hidden">
+    <!-- Scroll Progress Rowing Tracker -->
+    <div id="rower-tracker-container" class="fixed top-0 left-0 w-full h-20 bg-slate-950/90 border-b border-slate-800 backdrop-blur z-50 overflow-hidden">
         <!-- Track line -->
         <div class="absolute bottom-2 left-0 right-0 h-0.5 bg-slate-800"></div>
         
         <!-- Moving Boat Container -->
-        <div id="rowing-boat" class="absolute top-2 left-0 transition-all duration-75 ease-out flex items-center" style="transform: translateX(0px);">
-            <!-- Custom Image Icon, Mirrored Horizontally -->
-            <img src="Rowericon.png" alt="Rower Progress Icon" class="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] -scale-x-100">
+        <div id="rowing-boat" class="absolute top-0 left-0 transition-all duration-75 ease-out flex items-center h-full" style="transform: translateX(0px);">
+            <!-- Doubled size (w-20 h-20), flipped horizontally (-scale-x-100), and brightened to very light blue -->
+            <img src="Rowericon.png" 
+                 alt="Rower Progress Icon" 
+                 class="w-20 h-20 object-contain -scale-x-100 brightness-150 contrast-125 filter invert-[0.6] sepia-[1] hue-rotate-[170deg] saturate-[300%] drop-shadow-[0_0_12px_rgba(186,230,253,0.8)]">
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="mt-14 border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-14 z-40">
+    <!-- Main Navigation Header (Adjusted offset for taller top bar) -->
+    <header class="mt-20 border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-20 z-40">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-wider text-blue-500 uppercase">WJH Rowing</span>
             <nav class="hidden md:flex space-x-6 text-sm text-slate-300 font-medium">
@@ -48,85 +50,16 @@
             </div>
         </section>
 
-        <!-- Real Press Articles Section -->
+        <!-- Dynamic Press Articles Section (Loaded from JSON) -->
         <section id="press" class="space-y-6">
             <div>
                 <h2 class="text-2xl font-bold text-white">In The Press & News Articles</h2>
                 <p class="text-slate-400 text-sm">Recent press coverage featuring William Jackson Heritage and Torquay Rowing Club.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Article 1 -->
-                <article class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
-                    <div class="space-y-3">
-                        <span class="text-xs text-blue-400 font-semibold tracking-wide uppercase">Torbay Weekly • Local Sport</span>
-                        <h3 class="text-xl font-bold text-white hover:text-blue-400 transition">
-                            <a href="https://www.torbayweekly.co.uk/sport/jackson-heritage-leads-torquay-to-double-success-at-falmouth-regatta-8809283" target="_blank" rel="noopener noreferrer">
-                                Jackson Heritage leads Torquay to double success at Falmouth Regatta
-                            </a>
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Highlights from Falmouth Regatta where Jackson Heritage helped lead Torquay Rowing Club to multiple victories in competitive regional heats.
-                        </p>
-                    </div>
-                    <a href="https://www.torbayweekly.co.uk/sport/jackson-heritage-leads-torquay-to-double-success-at-falmouth-regatta-8809283" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-blue-400 font-semibold mt-6 hover:underline">
-                        Read full story on Torbay Weekly →
-                    </a>
-                </article>
-
-                <!-- Article 2 -->
-                <article class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
-                    <div class="space-y-3">
-                        <span class="text-xs text-blue-400 font-semibold tracking-wide uppercase">North Devon Gazette • Sport</span>
-                        <h3 class="text-xl font-bold text-white hover:text-blue-400 transition">
-                            <a href="https://www.northdevongazette.co.uk/sport/brilliant-day-of-rowing-showcases-the-beauty-of-sport-in-north-devon-8869884" target="_blank" rel="noopener noreferrer">
-                                Brilliant day of rowing showcases the beauty of sport in North Devon
-                            </a>
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Coverage of a high-energy summer regatta showcasing competitive crews from across Devon battling for points on North Devon waters.
-                        </p>
-                    </div>
-                    <a href="https://www.northdevongazette.co.uk/sport/brilliant-day-of-rowing-showcases-the-beauty-of-sport-in-north-devon-8869884" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-blue-400 font-semibold mt-6 hover:underline">
-                        Read full story on North Devon Gazette →
-                    </a>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
-                    <div class="space-y-3">
-                        <span class="text-xs text-blue-400 font-semibold tracking-wide uppercase">Torbay Weekly • Local Sport</span>
-                        <h3 class="text-xl font-bold text-white hover:text-blue-400 transition">
-                            <a href="https://www.torbayweekly.co.uk/sport/home-waters-provide-success-for-torbay-regatta-7056827" target="_blank" rel="noopener noreferrer">
-                                Home waters provide success for Torbay Regatta
-                            </a>
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Torquay RC capitalise on familiar bay conditions to capture impressive results during the annual Torbay Regatta.
-                        </p>
-                    </div>
-                    <a href="https://www.torbayweekly.co.uk/sport/home-waters-provide-success-for-torbay-regatta-7056827" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-blue-400 font-semibold mt-6 hover:underline">
-                        Read full story on Torbay Weekly →
-                    </a>
-                </article>
-
-                <!-- Article 4 -->
-                <article class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
-                    <div class="space-y-3">
-                        <span class="text-xs text-blue-400 font-semibold tracking-wide uppercase">Torbay Weekly • Local Sport</span>
-                        <h3 class="text-xl font-bold text-white hover:text-blue-400 transition">
-                            <a href="https://www.torbayweekly.co.uk/sport/torbay-teams-rowing-to-success-in-a-fabulous-paigton-regatta-6775237" target="_blank" rel="noopener noreferrer">
-                                Torbay teams rowing to success in a fabulous Paignton Regatta
-                            </a>
-                        </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Strong performances and local rivalry on display at Paignton Regatta as Torquay Rowing Club battles for regional podium positions.
-                        </p>
-                    </div>
-                    <a href="https://www.torbayweekly.co.uk/sport/torbay-teams-rowing-to-success-in-a-fabulous-paigton-regatta-6775237" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-blue-400 font-semibold mt-6 hover:underline">
-                        Read full story on Torbay Weekly →
-                    </a>
-                </article>
+            <!-- Articles grid populated via JS -->
+            <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <p class="text-slate-500 text-sm">Loading press releases...</p>
             </div>
         </section>
 
@@ -220,18 +153,45 @@
         <p>© 2026 William Jackson Heritage • Torquay Rowing Club</p>
     </footer>
 
-    <!-- JavaScript for Progress Rower Movement -->
+    <!-- JavaScript for Progress Movement & JSON Fetching -->
     <script>
+        // Scroll progress calculation
         const boat = document.getElementById('rowing-boat');
-
         window.addEventListener('scroll', () => {
             const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollProgress = window.scrollY / totalHeight;
-            const maxTranslation = window.innerWidth - 50;
+            const maxTranslation = window.innerWidth - 90;
             const currentPosition = scrollProgress * maxTranslation;
-
             boat.style.transform = `translateX(${currentPosition}px)`;
         });
+
+        // Load news articles dynamically from news.json
+        async function loadNews() {
+            const container = document.getElementById('news-container');
+            try {
+                const response = await fetch('news.json');
+                const articles = await response.json();
+
+                container.innerHTML = articles.map(article => `
+                    <article class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
+                        <div class="space-y-3">
+                            <span class="text-xs text-blue-400 font-semibold tracking-wide uppercase">${article.source}</span>
+                            <h3 class="text-xl font-bold text-white hover:text-blue-400 transition">
+                                <a href="${article.url}" target="_blank" rel="noopener noreferrer">${article.title}</a>
+                            </h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">${article.description}</p>
+                        </div>
+                        <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-blue-400 font-semibold mt-6 hover:underline">
+                            Read full story →
+                        </a>
+                    </article>
+                `).join('');
+            } catch (error) {
+                container.innerHTML = '<p class="text-red-400 text-sm">Failed to load news articles. Ensure news.json is in the root directory.</p>';
+            }
+        }
+
+        loadNews();
     </script>
 </body>
 </html>
